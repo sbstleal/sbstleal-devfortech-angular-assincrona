@@ -1,0 +1,13 @@
+.main {
+  text-align: center;
+  background-color: #3a5ba0;
+  color: #f0eabe;
+  padding: 1rem;
+  height: 80%;
+  position: absolute;
+  overflow: hidden;
+  &__text {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
