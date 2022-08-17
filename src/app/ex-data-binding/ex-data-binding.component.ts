@@ -14,6 +14,21 @@ imageUrl = 'https://static9.depositphotos.com/1594920/1089/i/600/depositphotos_1
 
 valorInc = 'Valor Inicial 5';
 
+valorInput = '';
+
+clicou($event: any) {
+  console.log('clicou', $event);
+}
+
+digitouAlgo($event: any) {
+  this.valorInput = $event.target.value;
+  console.log($event)
+}
+
+passouMouse() {
+  console.log('Passou por aqui.');
+}
+
   constructor() { }
 
   ngOnInit(): void {

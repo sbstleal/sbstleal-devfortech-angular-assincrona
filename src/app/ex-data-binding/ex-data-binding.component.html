@@ -1,3 +1,11 @@
+<h1>ex data binding</h1>
+
+<button (click)="clicou($event)" (mouseenter)="passouMouse()"> Clique aqui</button>
+
+<input type="text" [value]="valorInput" (keyup)="digitouAlgo($event)">
+
+<h1>Valor do Input: {{valorInput}}</h1>
+
 <img [src]="imageUrl">
 
 <input type="text" [value]="valorInc">
