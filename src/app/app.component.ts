@@ -9,6 +9,7 @@ export class AppComponent {
 
   pp = 'uma word.';
   fcor = 'Blue chanel';
+  tituloBind = 'New title';
 
   constructor() {}
 }
