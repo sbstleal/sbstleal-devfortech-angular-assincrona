@@ -11,5 +11,15 @@ export class AppComponent {
   fcor = 'Blue chanel';
   tituloBind = 'New title';
 
+  contInicial = 10;
+
+  eventoRecebido($event: any) {
+    console.log('App Component: Evento Recebido', $event);
+  }
+
+  onValorAtualizadoNoContador(novoValor : any) {
+    console.log('App Component: valor atualizado', novoValor);
+  }
+
   constructor() {}
 }

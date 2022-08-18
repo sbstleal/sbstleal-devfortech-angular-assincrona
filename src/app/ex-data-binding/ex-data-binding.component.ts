@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-ex-data-binding',
@@ -9,6 +9,7 @@ export class ExDataBindingComponent implements OnInit {
 
 @Input() palavra: string | undefined;
 @Input() color: string | undefined;
+@Output() clicarOk = new EventEmitter();
 
 imageUrl = 'https://static9.depositphotos.com/1594920/1089/i/600/depositphotos_10890313-stock-photo-english-bulldog-11-months-old.jpg';
 
@@ -27,6 +28,11 @@ digitouAlgo($event: any) {
 
 passouMouse() {
   console.log('Passou por aqui.');
+}
+
+onClickBtnEmissor($event: any) {
+  console.log('Emitir emissões para o componente pai');
+  this.clicarOk.emit($event);
 }
 
   constructor() { }

@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 import { ExDataBindingComponent } from './ex-data-binding/ex-data-binding.component';
+import { ExContadorComponent } from './ex-contador/ex-contador.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ExDataBindingComponent } from './ex-data-binding/ex-data-binding.compon
     FooterComponent,
     MainComponent,
     ExDataBindingComponent,
+    ExContadorComponent,
   ],
   imports: [
     BrowserModule,

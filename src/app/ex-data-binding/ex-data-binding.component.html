@@ -1,14 +1,28 @@
 <h1>ex data binding</h1>
 
-<button (click)="clicou($event)" (mouseenter)="passouMouse()"> Clique aqui</button>
+<button (click)="onClickBtnEmissor($event)">
+    Emitir informação do click
+</button>
+<br><br>
 
-<input type="text" [value]="valorInput" (keyup)="digitouAlgo($event)">
+<button
+(click)="clicou($event)"
+(mouseenter)="passouMouse()">
+Clique aqui
+</button>
 
-<h1>Valor do Input: {{valorInput}}</h1>
+<input type="text"
+[value]="valorInput"
+(keyup)="digitouAlgo($event)">
+
+<h1>
+    Valor do Input: {{valorInput}}
+</h1>
 
 <img [src]="imageUrl">
 
-<input type="text" [value]="valorInc">
+<input type="text"
+[value]="valorInc">
 
 <h2>Palavra: {{palavra}} </h2>
 

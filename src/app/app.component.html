@@ -1,9 +1,17 @@
-<app-header [title]="tituloBind"></app-header>
+<app-header
+[title]="tituloBind">
+</app-header>
 
-<app-ex-data-binding
+<!-- <app-ex-data-binding
   [palavra]="pp"
-  [color]="fcor">
-</app-ex-data-binding>
+  [color]="fcor"
+  (clicarOk)="eventoRecebido($event)">
+</app-ex-data-binding> -->
+
+<app-ex-contador
+[val]="contInicial"
+(valUpdt)="onValorAtualizadoNoContador($event)">
+</app-ex-contador>
 
 <app-footer></app-footer>
 
