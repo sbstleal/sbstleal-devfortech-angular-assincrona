@@ -17,6 +17,8 @@ valorInc = 'Valor Inicial 5';
 
 valorInput = '';
 
+valorContador = 100;
+
 clicou($event: any) {
   console.log('clicou', $event);
 }
@@ -33,6 +35,11 @@ passouMouse() {
 onClickBtnEmissor($event: any) {
   console.log('Emitir emissões para o componente pai');
   this.clicarOk.emit($event);
+}
+
+onValorAtualizadoNoContador(novoValor : any) {
+  this.valorContador = novoValor;
+  console.log('App Component: valor atualizado', novoValor);
 }
 
   constructor() { }

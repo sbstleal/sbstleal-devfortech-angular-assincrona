@@ -8,16 +8,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ExContadorComponent {
 
   @Input() val = 0;
-  @Output() valUpdt = new EventEmitter();
+  @Output() valChange = new EventEmitter();
 
   decr() {
     this.val = this.val - 1;
-    this.valUpdt.emit(this.val);
+    this.valChange.emit(this.val);
   }
 
   incr() {
     this.val = this.val + 1;
-    this.valUpdt.emit(this.val);
+    this.valChange.emit(this.val);
   }
 
   constructor() { }
