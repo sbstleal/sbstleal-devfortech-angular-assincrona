@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { ExDataBindingComponent } from './ex-data-binding/ex-data-binding.component';
 import { ExContadorComponent } from './ex-contador/ex-contador.component';
 import { ExDiretivasComponent } from './ex-diretivas/ex-diretivas.component';
+import { ExNgclassComponent } from './ex-ngclass/ex-ngclass.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ExDiretivasComponent } from './ex-diretivas/ex-diretivas.component';
     ExDataBindingComponent,
     ExContadorComponent,
     ExDiretivasComponent,
+    ExNgclassComponent,
   ],
   imports: [
     BrowserModule,

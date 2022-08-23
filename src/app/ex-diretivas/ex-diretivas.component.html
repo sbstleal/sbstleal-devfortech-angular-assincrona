@@ -1,0 +1,26 @@
+<!-- <p>Valor da variável bool: {{exb}}</p>
+
+<button (click)="deveExibir()">Magic</button>
+
+<p *ngIf="exb else elseBlock">Dentro do If</p>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+
+<h3 *ngIf="sub(8, 4) < 10">Exibe</h3>
+
+<ul>
+  <li *ngFor="let i of listaDeCarros">Frutas: {{i}}</li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let memesAgrupados of MEMES_CATEGORIA">
+    <h2>{{memesAgrupados.categoria}}</h2>
+
+    <div *ngFor="let meme of memesAgrupados.memes; let par = even">
+      <img [src]=" link + meme.imagemURL" *ngIf="par; else NaoEhPar">
+      <ng-template #NaoEhPar>
+        <h3>IMAGEM PAR!</h3>
+      </ng-template>
+    </div>
+  </li>
+</ul>
