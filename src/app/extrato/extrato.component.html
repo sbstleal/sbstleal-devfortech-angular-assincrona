@@ -16,20 +16,24 @@
     <button (click)="proximaPagina()" class="btn btn-secondary">Próxima página</button>
 
     <table class="table table-striped">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Data</th>
-        <th scope="col">Descrição</th>
-        <th scope="col">Valor</th>
-        <th scope="col">Categoria</th>
-      </tr>
-      <tr *ngFor="let tsc of transacoes">
-        <td scope="row">{{tsc.id}}</td>
-        <td>{{tsc.data | date}}</td>
-        <td>{{tsc.descricao}}</td>
-        <td>{{tsc.valor | currency: 'BRL'}}</td>
-        <td>{{tsc.categoria}}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Data</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Categoria</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tsc of transacoes">
+          <td scope="row">{{tsc.id}}</td>
+          <td>{{tsc.data | date}}</td>
+          <td>{{tsc.descricao}}</td>
+          <td>{{tsc.valor | currency: 'BRL'}}</td>
+          <td>{{tsc.categoria}}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

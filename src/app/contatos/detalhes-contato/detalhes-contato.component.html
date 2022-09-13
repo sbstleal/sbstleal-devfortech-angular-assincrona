@@ -1,0 +1,29 @@
+<div class="container text-center p-5">
+
+  <div *ngIf="estaCarregando" class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+
+  <div *ngIf="erroCarregamento" class="alert alert-info col-md-6 d-inline-block" role="alert">
+    Ops... Temos um problema!
+    <br>
+    <button (click)="carregarContato(contato.id.toString())" type="button" class="btn btn-primary mt-3">Tentar Novamente</button>
+  </div>
+
+  <div *ngIf="!estaCarregando && !erroCarregamento">
+    <p>ID: {{contato.id}}</p>
+    <p>Nome: {{contato.nome}}</p>
+    <p>CPF: {{contato.cpf}}</p>
+    <p>Banco: {{contato.banco}}</p>
+    <p>Agência: {{contato.ag}}</p>
+    <p>Conta: {{contato.cc}}</p>
+  </div>
+
+  <br>
+
+  <button class="btn btn-primary" (click)="voltar()">Voltar</button>
+
+</div>
+
+<router-outlet>
+</router-outlet>

@@ -1,4 +1,4 @@
-export interface IContatos {
+export interface IContato {
   id: number;
   nome: string;
   cpf: string;

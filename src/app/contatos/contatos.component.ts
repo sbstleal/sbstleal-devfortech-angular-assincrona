@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { finalize, take } from 'rxjs';
 
-import { IContatos } from './contatos.interface';
+import { IContato } from './contatos.interface';
 import { ContatosService } from './contatos.service';
 
 @Component({
@@ -14,9 +15,12 @@ export class ContatosComponent implements OnInit {
   estaCarregando: boolean;
   erroCarregamento: boolean;
 
-  contatos!: IContatos[];
+  contatos!: IContato[];
 
-  constructor(private contatosService: ContatosService) { }
+  constructor(
+    private contatosService: ContatosService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
     this.carregarContatos();
@@ -37,7 +41,7 @@ export class ContatosComponent implements OnInit {
     );
   }
 
-  onSucesso(response: IContatos[]) {
+  onSucesso(response: IContato[]) {
     {
       this.contatos = response;
     }
@@ -48,6 +52,10 @@ export class ContatosComponent implements OnInit {
       this.erroCarregamento = true;
       console.error(error);
     }
+  }
+
+  irParaDetalhes(idContato: number) {
+    this.router.navigate([`contatos/${idContato}`])
   }
 
 }

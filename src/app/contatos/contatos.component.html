@@ -12,12 +12,20 @@
 
   <div *ngIf="!estaCarregando && !erroCarregamento">
     <table class="table table-striped">
-      <tr>
-        <th scope="col">Nome</th>
-      </tr>
-      <tr *ngFor="let cont of contatos">
-        <td scope="row">{{cont.nome}}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cont of contatos">
+          <td scope="row">{{cont.nome}}</td>
+          <td>
+            <button class="btn btn-primary" (click)="irParaDetalhes(cont.id)">Ver detalhes</button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>
