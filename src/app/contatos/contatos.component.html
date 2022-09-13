@@ -1,0 +1,25 @@
+<div class="container text-center p-5">
+
+  <div *ngIf="estaCarregando" class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+
+  <div *ngIf="erroCarregamento" class="alert alert-info col-md-6 d-inline-block" role="alert">
+    Ops... Temos um problema!
+    <br>
+    <button (click)="carregarContatos()" type="button" class="btn btn-primary mt-3">Tentar Novamente</button>
+  </div>
+
+  <div *ngIf="!estaCarregando && !erroCarregamento">
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">Nome</th>
+      </tr>
+      <tr *ngFor="let cont of contatos">
+        <td scope="row">{{cont.nome}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

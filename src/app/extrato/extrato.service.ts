@@ -10,11 +10,22 @@ import { ITransacao } from './extrato.interface';
 export class ExtratoService {
   constructor(
     private http: HttpClient
-    ) {}
+  ) { }
 
-    api_url = environment.fakeapi;
+  api_url = environment.fakeapi;
 
-  getTransacoes() {
-    return this.http.get<ITransacao[]>(`${this.api_url}/vitorfgsantos/fake-api/transacoes`);
+  getTransacoes(pagina: number) {
+    //Simular error
+    /*const error = throwError('Erro genérico');
+    return timer(3000)
+      .pipe(
+        mergeMap(() => error)
+      )*/
+    return this.http.get<ITransacao[]>(`${this.api_url}/vitorfgsantos/fake-api/transacoes`, {
+      params: {
+        _page: String(pagina)
+      }
+    });
   }
 }
+

@@ -10,22 +10,28 @@
     <button (click)="carregarExtrato()" type="button" class="btn btn-primary mt-3">Tentar Novamente</button>
   </div>
 
-  <table class="table table-striped" *ngIf="!estaCarregando && !erroCarregamento">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Data</th>
-      <th scope="col">Descrição</th>
-      <th scope="col">Valor</th>
-      <th scope="col">Categoria</th>
-    </tr>
-    <tr *ngFor="let tsc of transacoes">
-      <td scope="row">{{tsc.id}}</td>
-      <td>{{tsc.data | date}}</td>
-      <td>{{tsc.descricao}}</td>
-      <td>{{tsc.valor | currency: 'BRL'}}</td>
-      <td>{{tsc.categoria}}</td>
-    </tr>
-  </table>
+  <div *ngIf="!estaCarregando && !erroCarregamento">
+    <button (click)="paginaAnterior()" [disabled]="pagina === 1" class="btn btn-primary m-lg-1">Página anterior</button>
+    <p>Página atual: {{pagina}}</p>
+    <button (click)="proximaPagina()" class="btn btn-secondary">Próxima página</button>
+
+    <table class="table table-striped">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Data</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Categoria</th>
+      </tr>
+      <tr *ngFor="let tsc of transacoes">
+        <td scope="row">{{tsc.id}}</td>
+        <td>{{tsc.data | date}}</td>
+        <td>{{tsc.descricao}}</td>
+        <td>{{tsc.valor | currency: 'BRL'}}</td>
+        <td>{{tsc.categoria}}</td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
